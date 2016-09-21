@@ -1,9 +1,3 @@
+languages:
+  PHP: true
 exclude_paths: ["test/*"]
-engines:
-  phpmd:
-    enabled: true
-    config:
-      file_extensions:
-        - php
-        - inc
-      rulesets: "cleancode,codesize,controversial,design,naming"
