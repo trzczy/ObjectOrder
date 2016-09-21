@@ -98,8 +98,8 @@ trait StringRepresentationHelper
             if (isset($element->former)) {
                 $newElementFormer = array_filter(
                     $element->former,
-                    function ($testedElementIdentity) use ($formerToRemove) {
-                        return ($testedElementIdentity !== $formerToRemove);
+                    function ($testedElementIdent) use ($formerToRemove) {
+                        return ($testedElementIdent !== $formerToRemove);
                     }
                 );
                 if (!$newElementFormer) {
