@@ -51,11 +51,10 @@ trait StringRepresentationHelper
             $former = [];
             $newElementBundle = [];
             foreach ($data as $element) {
-                if ($this->isSuccessor($element)) {
-                    $newElementBundle[] = $element;
-                } else {
-                    $former[] = $element->id;
-                }
+                $isSuccessor = $this->isSuccessor($element);
+                $isNotSuccessor = !$isSuccessor;
+                if ($isSuccessor) $newElementBundle[] = $element;
+                if ($isNotSuccessor) $former[] = $element->id;
             }
             $formerTotal[] = $former;
 
