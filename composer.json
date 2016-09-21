@@ -1,0 +1,20 @@
+{
+    "name": "master/object-order",
+    "description": "Creates sorted item groups by pointing some former items out.",
+    "require": {
+        "php": ">=7.0.0",
+        "phpunit/phpunit": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trzczy\\Helpers\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "trzczy",
+            "email": "trzczy@gmail.com"
+        }
+    ]
+}
