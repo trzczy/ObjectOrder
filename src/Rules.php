@@ -37,7 +37,7 @@ class Rules implements Elements
             function ($arg) {
                 return get_object_vars($arg);
             },
-            func_get_args()
+            [$description, $tested]
         );
         return !(bool)call_user_func_array('array_diff_assoc', $assocArrayArgs);
     }
