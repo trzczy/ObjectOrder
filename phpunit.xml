@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<phpunit colors="true"  bootstrap="./bootstrap.php">
+<phpunit colors="true" bootstrap="./bootstrap.php">
     <testsuites>
-        <testsuite>
+        <testsuite name="unit">
             <directory suffix=".php">test</directory>
         </testsuite>
     </testsuites>
     <logging>
-        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true" />
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
     </logging>
     <filter>
         <whitelist>
