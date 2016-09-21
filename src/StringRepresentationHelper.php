@@ -53,8 +53,12 @@ trait StringRepresentationHelper
             foreach ($data as $element) {
                 $isSuccessor = $this->isSuccessor($element);
                 $isNotSuccessor = !$isSuccessor;
-                if ($isSuccessor) $newElementBundle[] = $element;
-                if ($isNotSuccessor) $former[] = $element->id;
+                if ($isSuccessor) {
+                    $newElementBundle[] = $element;
+                }
+                if ($isNotSuccessor) {
+                    $former[] = $element->id;
+                }
             }
             $formerTotal[] = $former;
 
@@ -101,10 +105,12 @@ trait StringRepresentationHelper
                         return ($testedElementIdent !== $formerToRemove);
                     }
                 );
-                if (!$newElementFormer) {
-                    unset($element->former);
-                } else {
+                $noNewElementFormer = !$newElementFormer;
+                if ($newElementFormer) {
                     $element->former = $newElementFormer;
+                }
+                if ($noNewElementFormer) {
+                    unset($element->former);
                 }
             }
             $newElementBundle[] = $element;
