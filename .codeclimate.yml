@@ -1,3 +1,8 @@
 languages:
   PHP: true
 exclude_paths: ["test/*"]
+engines:
+  phpmd:
+    enabled: true
+    exclude_fingerprints:
+    - d06d40061910be96c1c09e5fe3a18e11
