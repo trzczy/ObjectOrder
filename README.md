@@ -7,7 +7,7 @@ Share items into groups by specifying former items.
 ## Installation
 `composer require master/object-order`
 
-## Example usage
+### Example usage
 ```php
     require_once __DIR__ . '/vendor/autoload.php';
     use Trzczy\Helpers\Rules;
