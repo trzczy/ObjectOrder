@@ -17,10 +17,6 @@ use stdClass;
  */
 class Rules implements Elements
 {
-    /**
-     * @var mixed Should contain nested associated array or json string of such an array.
-     */
-
     use ElementBundleHelper;
     use StringRepresentationHelper;
 
