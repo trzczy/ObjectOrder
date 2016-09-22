@@ -5,9 +5,6 @@
         "php": ">=7.0.0",
         "phpunit/phpunit": ">=5.5"
     },
-    "require-dev": {
-        "codeclimate/php-test-reporter": "dev-master"
-    },
     "autoload": {
         "psr-4": {
             "Trzczy\\Helpers\\": "src/"
