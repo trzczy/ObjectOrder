@@ -7,7 +7,7 @@ class ObjectOrderTest extends TestCase
 {
     private $rules;
 
-    public function inputParameters()
+    public function initialAndExpectedValues()
     {
         return [
             [
@@ -22,7 +22,7 @@ class ObjectOrderTest extends TestCase
         
     {"method":"Ernest","input":"Hemingway",
         "former":[{"input":"Herbert"},{"method":"Edith"}]}
-]',
+                ]',
                 '[
     [{"method":"Zbigniew","input":"Herbert","arg1":24,"arg2":"abc"}],
     
@@ -66,7 +66,7 @@ class ObjectOrderTest extends TestCase
 
   {"method":"Ernest","input":"Hemingway",
       "former":[{"method":"Frank"}]}
-]',
+                ]',
                 '[
 
   [{"method":"Frank","input":"Herbert"},{"method":"Zbigniew","arg1":24,"arg2":"abc","input":"Herbert"}],
@@ -74,8 +74,8 @@ class ObjectOrderTest extends TestCase
   [{"method":"Ernest","input":"Hemingway"}, {"method":"Edith","input":"Stein"}]
 
 ]'
-            ],
-//003
+            ]
+            ,//003
             [
                 '[
     {"method":"Zbigniew","input":"Herbert","arg1":24,"arg2":"abc"},
@@ -123,7 +123,7 @@ class ObjectOrderTest extends TestCase
         "former":[{"input":"Herbert"}]},
         
     {"method":"Ernest","input":"Hemingway"}
-]',
+                ]',
                 '[
     [{"method":"Ernest","input":"Hemingway"},{"method":"Zbigniew","input":"Herbert","arg1":24,"arg2":"abc"},{"method":"Frank","input":"Herbert"}],
     
@@ -141,7 +141,7 @@ class ObjectOrderTest extends TestCase
     {"method":"Edith","input":"Stein"},
         
     {"method":"Ernest","input":"Hemingway"}
-]',
+                ]',
                 '[
     [{"method":"Ernest","input":"Hemingway"},{"method":"Zbigniew","input":"Herbert","arg1":24,"arg2":"abc"},{"method":"Edith","input":"Stein"}],
     
@@ -181,7 +181,7 @@ class ObjectOrderTest extends TestCase
         
     {"method":"Ernest","input":"Hemingway",
         "former":[{"input":"Herbert"},{"method":"Edith"}]}
-]',
+                ]',
                 '[
     [{"method":"Zbigniew","input":"Herbert","arg1":24,"arg2":"abc"}],
     
@@ -196,11 +196,11 @@ class ObjectOrderTest extends TestCase
     }
 
     /**
-     * @dataProvider inputParameters
+     * @dataProvider initialAndExpectedValues
      * @param $jsonData
      * @param $expected
      */
-    public function testTrueIsTrue($jsonData, $expected)
+    public function testIfGivenElementsAreSortedAsExpected($jsonData, $expected)
     {
         $result = $this->rules->order($jsonData);
         $expected = json_decode($expected);
